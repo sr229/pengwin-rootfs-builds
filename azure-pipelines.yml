@@ -1,18 +1,17 @@
 trigger:
 - master
 
+schedules:
+- cron: "0 0 * * *"
+  displayName: "Midnight build"
+  always: "true"
+
 jobs:
 - template: debootstrap_architecture_template.yml
-  schedules:
-     - cron: "0 0 * * *"
-       displayName: Daily midnight build
   parameters:
     arch: amd64
     qemu_arch: x86_64
 - template: debootstrap_architecture_template.yml
-  schedules:
-     - cron: "0 0 * * *"
-       displayName: Daily midnight build
   parameters:
     arch: arm64
     qemu_arch: aarch64
