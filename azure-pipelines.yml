@@ -4,6 +4,9 @@ trigger:
 schedules:
 - cron: "0 0 * * *"
   displayName: "Midnight build"
+  branches:
+     include:
+       - '*'
   always: "true"
 
 jobs:
